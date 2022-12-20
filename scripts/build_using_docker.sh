@@ -3,7 +3,7 @@ set -ex
 script_dir=$(dirname "$0")
 cd ${script_dir}/..
 
-docker_img_name=build-env_`basename $(git remote show -n origin | grep Fetch | cut -d: -f2-) .git`
+docker_img_name=build-env_`basename $(git remote show -n origin | grep Fetch | cut -d: -f2-) .git | tr '[:upper:]' '[:lower:]'`
 echo "building docker image: ${docker_img_name}"
 docker build -t ${docker_img_name} scripts/docker_build_environment
 # added --net=host to avoid curl error because of wrong mtu - see: https://github.com/moby/moby/issues/22297
