@@ -7,7 +7,7 @@ cwd=`pwd`
 itk_dir=$1
 
 if [ -d $itk_dir ]; then
-    #source ${script_dir}/patch_itk.sh $itk_dir
+    source ${script_dir}/patch_itk.sh $itk_dir
 
     cd $itk_dir
     mkdir -p build
@@ -24,6 +24,7 @@ if [ -d $itk_dir ]; then
         -DModule_ITKIOMINC=ON \
         -DModule_ITKMINC=OFF \
         -DINSTALL_WRAP_ITK_COMPATIBILITY=OFF \
+    -DCMAKE_EXE_LINKER_FLAGS="-static" \
 	-DBUILD_SHARED_LIBS=OFF \
 	-DITK_DYNAMIC_LOADING=OFF
     n=`nproc --ignore 1`
