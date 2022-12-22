@@ -19,7 +19,6 @@ if [ -d $itk_dir ]; then
 	-DCMAKE_CXX_COMPILER=/usr/bin/g++ \
 	-DBUILD_EXAMPLES:BOOL=ON \
 	-DBUILD_TESTING:BOOL=OFF \
-        -DITKV3_COMPATIBILITY=ON \
         -DITK_WRAP_PYTHON=OFF \
         -DModule_ITKIOMINC=ON \
         -DModule_ITKMINC=OFF \

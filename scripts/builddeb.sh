@@ -26,7 +26,7 @@ do
     cp $bindir/$binfile ${deb_root}/usr/bin/
 done
 
-version="4.8.2"  # TODO: parse from itk lib file
+version="5.3.0"  # TODO: parse from itk lib file
 package="pkg-itk-examples"
 maintainer="InsightSoftwareConsortium/ITK <https://github.com/InsightSoftwareConsortium/ITK/issues>"
 arch="amd64"
